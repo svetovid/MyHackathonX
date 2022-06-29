@@ -1,0 +1,12 @@
+﻿@using HackathonX.Web.Data
+
+<div class="game-status">
+  <div class="timer">10:15</div>
+  <div class="user-name">@CurrentUser?.Name</div>
+  <div class="score">@Score</div>
+</div>
+
+@code {
+  [Parameter] public User? CurrentUser { get; set; }
+  [Parameter] public int Score { get; set; }
+}

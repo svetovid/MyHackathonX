@@ -1,0 +1,870 @@
+[
+	{
+		"id": 1,
+		"text": "Which OS is the most commonly used one for iX right now?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 1,
+				"questionId": 1,
+				"text": "Linux"
+			},
+			{
+				"id": 2,
+				"questionId": 1,
+				"text": "Windows CE8",
+				"isCorrect": true
+			},
+			{
+				"id": 3,
+				"questionId": 1,
+				"text": "Windows CE6"
+			},
+			{
+				"id": 4,
+				"questionId": 1,
+				"text": "Windows 10"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"text": "Which database technology is used in iX?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 5,
+				"questionId": 2,
+				"text": "SQLite",
+				"isCorrect": true
+			},
+			{
+				"id": 6,
+				"questionId": 2,
+				"text": "MySQL"
+			},
+			{
+				"id": 7,
+				"questionId": 2,
+				"text": "MongoDB"
+			},
+			{
+				"id": 8,
+				"questionId": 2,
+				"text": "Oracle"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"text": "What is a Tag in iX Developer?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 9,
+				"questionId": 3,
+				"text": "It is a datatype"
+			},
+			{
+				"id": 10,
+				"questionId": 3,
+				"text": "A reference to an internal variable or an address in a PLC",
+				"isCorrect": true
+			},
+			{
+				"id": 11,
+				"questionId": 3,
+				"text": "A label which can be put on the operator panels"
+			},
+			{
+				"id": 12,
+				"questionId": 3,
+				"text": "An object with text support"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"text": "What will happen if a value is written a control system during communication error?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 13,
+				"questionId": 4,
+				"text": "Value will be written to control system when communication is brought back"
+			},
+			{
+				"id": 14,
+				"questionId": 4,
+				"text": "It's not be possible to write a value during communication error"
+			},
+			{
+				"id": 15,
+				"questionId": 4,
+				"text": "Communication errors will never occur"
+			},
+			{
+				"id": 16,
+				"questionId": 4,
+				"text": "Value will not be written to control system when communication is brought back",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 5,
+		"text": "What is a System Tag used for in iX?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 17,
+				"questionId": 5,
+				"text": "It is used to read acirro+ values from the cloud"
+			},
+			{
+				"id": 18,
+				"questionId": 5,
+				"text": "It is used to reboot the operator panel"
+			},
+			{
+				"id": 19,
+				"questionId": 5,
+				"text": "It is used to monitor or access variables from the system",
+				"isCorrect": true
+			},
+			{
+				"id": 20,
+				"questionId": 5,
+				"text": "It is used to debug iX runtime for developers"
+			}
+		]
+	},
+	{
+		"id": 6,
+		"text": "What is Text Library function used for in iX?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 21,
+				"questionId": 6,
+				"text": "To store static texts"
+			},
+			{
+				"id": 22,
+				"questionId": 6,
+				"text": "To store text tables with values linked to each text which for example can be connected to objects",
+				"isCorrect": true
+			},
+			{
+				"id": 23,
+				"questionId": 6,
+				"text": "To store text files in a library that can be used by the operator"
+			},
+			{
+				"id": 24,
+				"questionId": 6,
+				"text": "The Text library contains eBooks which the operator can used directly in the operator panel"
+			}
+		]
+	},
+	{
+		"id": 7,
+		"text": "What is a non volatile internal tag?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 25,
+				"questionId": 7,
+				"text": "A reference to local data value which is also saved in a database",
+				"isCorrect": true
+			},
+			{
+				"id": 26,
+				"questionId": 7,
+				"text": "A reference to a local data value which will loose the value if operator panel is restarted"
+			},
+			{
+				"id": 27,
+				"questionId": 7,
+				"text": "A reference to value saved in acirro+"
+			},
+			{
+				"id": 28,
+				"questionId": 7,
+				"text": "A reference to a control system register value"
+			}
+		]
+	},
+	{
+		"id": 8,
+		"text": "What is a data logger",
+		"score": 10,
+		"answers": [
+			{
+				"id": 29,
+				"questionId": 8,
+				"text": "A function to track logged in user on operator panel in a database table"
+			},
+			{
+				"id": 30,
+				"questionId": 8,
+				"text": "A function to store alarms in a database table"
+			},
+			{
+				"id": 31,
+				"questionId": 8,
+				"text": "A function where tag value data can be saved in a database table ",
+				"isCorrect": true
+			},
+			{
+				"id": 32,
+				"questionId": 8,
+				"text": "A function to store recipes in a database table"
+			}
+		]
+	},
+	{
+		"id": 9,
+		"text": "How often is a database table being refreshed?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 33,
+				"questionId": 9,
+				"text": "Every second"
+			},
+			{
+				"id": 34,
+				"questionId": 9,
+				"text": "Every 10s",
+				"isCorrect": true
+			},
+			{
+				"id": 35,
+				"questionId": 9,
+				"text": "Once a minute"
+			},
+			{
+				"id": 36,
+				"questionId": 9,
+				"text": "Once an hour"
+			}
+		]
+	},
+	{
+		"id": 10,
+		"text": "What window framework is supported in iX?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 37,
+				"questionId": 10,
+				"text": "WinUI"
+			},
+			{
+				"id": 38,
+				"questionId": 10,
+				"text": "UWP"
+			},
+			{
+				"id": 39,
+				"questionId": 10,
+				"text": "Net MAUI"
+			},
+			{
+				"id": 40,
+				"questionId": 10,
+				"text": "Windows Forms",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 11,
+		"text": "What programming language is supported in iX scripting?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 41,
+				"questionId": 11,
+				"text": "C#",
+				"isCorrect": true
+			},
+			{
+				"id": 42,
+				"questionId": 11,
+				"text": "C++"
+			},
+			{
+				"id": 43,
+				"questionId": 11,
+				"text": "C"
+			},
+			{
+				"id": 44,
+				"questionId": 11,
+				"text": "VB"
+			}
+		]
+	},
+	{
+		"id": 12,
+		"text": "What was the predecessor to iX Developer software?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 45,
+				"questionId": 12,
+				"text": "E-Designer"
+			},
+			{
+				"id": 46,
+				"questionId": 12,
+				"text": "Information Designer",
+				"isCorrect": true
+			},
+			{
+				"id": 47,
+				"questionId": 12,
+				"text": "Cezar"
+			},
+			{
+				"id": 48,
+				"questionId": 12,
+				"text": "Beijers OPC Server"
+			}
+		]
+	},
+	{
+		"id": 13,
+		"text": "What does HMI stands for?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 49,
+				"questionId": 13,
+				"text": "Home Made Interface"
+			},
+			{
+				"id": 50,
+				"questionId": 13,
+				"text": "Human Machine Interaction"
+			},
+			{
+				"id": 51,
+				"questionId": 13,
+				"text": "Human Manuevered Interface"
+			},
+			{
+				"id": 52,
+				"questionId": 13,
+				"text": "Human Machine Interface",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 14,
+		"text": "What does PLC stands for?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 53,
+				"questionId": 14,
+				"text": "Process Logic Controller"
+			},
+			{
+				"id": 54,
+				"questionId": 14,
+				"text": "Programmable Logic Configuration"
+			},
+			{
+				"id": 55,
+				"questionId": 14,
+				"text": "Programmable Logic Controller",
+				"isCorrect": true
+			},
+			{
+				"id": 56,
+				"questionId": 14,
+				"text": "Process Logic Configuration"
+			}
+		]
+	},
+	{
+		"id": 15,
+		"text": "What is polling time for a tag?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 57,
+				"questionId": 15,
+				"text": "The time between each read request for controller based tag"
+			},
+			{
+				"id": 58,
+				"questionId": 15,
+				"text": "The time between each read and reply request for controller based tag",
+				"isCorrect": true
+			},
+			{
+				"id": 59,
+				"questionId": 15,
+				"text": "The time to write a new value to the tag"
+			},
+			{
+				"id": 60,
+				"questionId": 15,
+				"text": "Time time it should take for the tag value to arrive"
+			}
+		]
+	},
+	{
+		"id": 16,
+		"text": "What is the smallest allowed polling time for a PLC variable?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 61,
+				"questionId": 16,
+				"text": "100ms",
+				"isCorrect": true
+			},
+			{
+				"id": 62,
+				"questionId": 16,
+				"text": "10ms"
+			},
+			{
+				"id": 63,
+				"questionId": 16,
+				"text": "1ms"
+			},
+			{
+				"id": 64,
+				"questionId": 16,
+				"text": "Unlimited"
+			}
+		]
+	},
+	{
+		"id": 17,
+		"text": "Which of the following options has an invalid Tag name?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 65,
+				"questionId": 17,
+				"text": "_Tag1"
+			},
+			{
+				"id": 66,
+				"questionId": 17,
+				"text": "Tag"
+			},
+			{
+				"id": 67,
+				"questionId": 17,
+				"text": "Tag_Ö"
+			},
+			{
+				"id": 68,
+				"questionId": 17,
+				"text": "1Tag_",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 18,
+		"text": "Which of the following Display Format is not available in an AnalogNumeric object?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 69,
+				"questionId": 18,
+				"text": "String"
+			},
+			{
+				"id": 70,
+				"questionId": 18,
+				"text": "Octal",
+				"isCorrect": true
+			},
+			{
+				"id": 71,
+				"questionId": 18,
+				"text": "Hex"
+			},
+			{
+				"id": 72,
+				"questionId": 18,
+				"text": "Binary"
+			}
+		]
+	},
+	{
+		"id": 19,
+		"text": "Which iX functionality is supporting array based tags?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 73,
+				"questionId": 19,
+				"text": "Recipe functionality"
+			},
+			{
+				"id": 74,
+				"questionId": 19,
+				"text": "Trend Viewer object"
+			},
+			{
+				"id": 75,
+				"questionId": 19,
+				"text": "Chart object",
+				"isCorrect": true
+			},
+			{
+				"id": 76,
+				"questionId": 19,
+				"text": "Datalogger logitems"
+			}
+		]
+	},
+	{
+		"id": 20,
+		"text": "What needs to be done before a unicode based onscreen keyboard is to be used in Windows CE-based operator panels?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 77,
+				"questionId": 20,
+				"text": "Operator panel needs to be soft rebooted",
+				"isCorrect": true
+			},
+			{
+				"id": 78,
+				"questionId": 20,
+				"text": "Only the iX project needs to be stopped and then started again"
+			},
+			{
+				"id": 79,
+				"questionId": 20,
+				"text": "Operator panel needs to be powered off and on again"
+			},
+			{
+				"id": 80,
+				"questionId": 20,
+				"text": "Unicode based onscreen keyboards are not supported in CE-based operator panels"
+			}
+		]
+	},
+	{
+		"id": 21,
+		"text": "What is Audit Trail functionality used for in iX?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 81,
+				"questionId": 21,
+				"text": "Audit Trail function is used to track operator actions. The data is not saved in a database."
+			},
+			{
+				"id": 82,
+				"questionId": 21,
+				"text": "Audit Trail function is used to track operator actions. The action triggered by the operator is saved with a message, description, timestamp, user name etc. in a database.",
+				"isCorrect": true
+			},
+			{
+				"id": 83,
+				"questionId": 21,
+				"text": "Audit Trail function is used for identifying the operator using the panel with help of QR code object. This is saved in a database."
+			},
+			{
+				"id": 84,
+				"questionId": 21,
+				"text": "Audit Trail function is used for track everything an operator does. This is saved in a database and sent via email or sms to the operator's manager."
+			}
+		]
+	},
+	{
+		"id": 22,
+		"text": "What does the Audit Trail logging strategy FDA stands for?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 85,
+				"questionId": 22,
+				"text": "File and Data Administration"
+			},
+			{
+				"id": 86,
+				"questionId": 22,
+				"text": "Filter Data in Audittrail"
+			},
+			{
+				"id": 87,
+				"questionId": 22,
+				"text": "File all Data in Audittrail"
+			},
+			{
+				"id": 88,
+				"questionId": 22,
+				"text": "Food and Drug Administration",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 23,
+		"text": "If Audit Trail logging strategy FDA is used, what is the rule for log entries?",
+		"score": 30,
+		"answers": [
+			{
+				"id": 89,
+				"questionId": 23,
+				"text": "Log entries are never allowed to be overwritten",
+				"isCorrect": true
+			},
+			{
+				"id": 90,
+				"questionId": 23,
+				"text": "Log entries can be overwritten"
+			},
+			{
+				"id": 91,
+				"questionId": 23,
+				"text": "Log entries should not be saved at all"
+			},
+			{
+				"id": 92,
+				"questionId": 23,
+				"text": "Log entries are only saved in RAM"
+			}
+		]
+	},
+	{
+		"id": 24,
+		"text": "Which functionality is new in the iX 2.40 Sp7 release?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 93,
+				"questionId": 24,
+				"text": "Object alias"
+			},
+			{
+				"id": 94,
+				"questionId": 24,
+				"text": "Multi touch in screens"
+			},
+			{
+				"id": 95,
+				"questionId": 24,
+				"text": "Multilanguage Font Templates",
+				"isCorrect": true
+			},
+			{
+				"id": 96,
+				"questionId": 24,
+				"text": "The release only contains bug fixes"
+			}
+		]
+	},
+	{
+		"id": 25,
+		"text": "Which iX object can show data from dataloggers?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 97,
+				"questionId": 25,
+				"text": "Chart object"
+			},
+			{
+				"id": 98,
+				"questionId": 25,
+				"text": "Analog numeric object"
+			},
+			{
+				"id": 99,
+				"questionId": 25,
+				"text": "QR code object"
+			},
+			{
+				"id": 100,
+				"questionId": 25,
+				"text": "Trend Viewer object",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 26,
+		"text": "What will happen with trend viewer curve if there is a communication error to the control system?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 101,
+				"questionId": 26,
+				"text": "There will be a gap in the trend viewer curve during the communication error",
+				"isCorrect": true
+			},
+			{
+				"id": 102,
+				"questionId": 26,
+				"text": "Curve value will be set to 0"
+			},
+			{
+				"id": 103,
+				"questionId": 26,
+				"text": "Nothing will happen, curve value will be the same"
+			},
+			{
+				"id": 104,
+				"questionId": 26,
+				"text": "QR code object"
+			}
+		]
+	},
+	{
+		"id": 27,
+		"text": "What will be logged in database table for data logger if there is communication error to the control system?",
+		"score": 20,
+		"answers": [
+			{
+				"id": 105,
+				"questionId": 27,
+				"text": "Value 0"
+			},
+			{
+				"id": 106,
+				"questionId": 27,
+				"text": "Same value as before communication error"
+			},
+			{
+				"id": 107,
+				"questionId": 27,
+				"text": "Value -1"
+			},
+			{
+				"id": 108,
+				"questionId": 27,
+				"text": "null",
+				"isCorrect": true
+			}
+		]
+	},
+	{
+		"id": 28,
+		"text": "Which of these events are not a Tag event?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 109,
+				"questionId": 28,
+				"text": "ValueChange"
+			},
+			{
+				"id": 110,
+				"questionId": 28,
+				"text": "AccessDenied"
+			},
+			{
+				"id": 111,
+				"questionId": 28,
+				"text": "Opened",
+				"isCorrect": true
+			},
+			{
+				"id": 112,
+				"questionId": 28,
+				"text": "ValueOff"
+			}
+		]
+	},
+	{
+		"id": 29,
+		"text": "What is the standard Demo time when simulating an iX project?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 113,
+				"questionId": 29,
+				"text": "1 hour"
+			},
+			{
+				"id": 114,
+				"questionId": 29,
+				"text": "30 min",
+				"isCorrect": true
+			},
+			{
+				"id": 115,
+				"questionId": 29,
+				"text": "1 day"
+			},
+			{
+				"id": 116,
+				"questionId": 29,
+				"text": "There is no demo time"
+			}
+		]
+	},
+	{
+		"id": 30,
+		"text": "How many keyboard layouts are supported in iX?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 117,
+				"questionId": 30,
+				"text": "12",
+				"isCorrect": true
+			},
+			{
+				"id": 118,
+				"questionId": 30,
+				"text": "6"
+			},
+			{
+				"id": 119,
+				"questionId": 30,
+				"text": "1"
+			},
+			{
+				"id": 120,
+				"questionId": 30,
+				"text": "There is no limitation"
+			}
+		]
+	},
+	{
+		"id": 31,
+		"text": "What is OPC UA?",
+		"score": 10,
+		"answers": [
+			{
+				"id": 121,
+				"questionId": 31,
+				"text": "A communication driver with the name OPC UA"
+			},
+			{
+				"id": 122,
+				"questionId": 31,
+				"text": "The only communication standard used in Industry 4.0 "
+			},
+			{
+				"id": 123,
+				"questionId": 31,
+				"text": "A predefined super user in iX"
+			},
+			{
+				"id": 124,
+				"questionId": 31,
+				"text": "A data exchange standard for industrial communication",
+				"isCorrect": true
+			}
+		]
+	}
+]
