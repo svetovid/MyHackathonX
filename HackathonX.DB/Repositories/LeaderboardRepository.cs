@@ -28,14 +28,14 @@ namespace HackathonX.DB.Repositories
             return leaderboard.OrderByDescending(x => x.Score);
         }
 
-        public async Task SaveUserScore(Guid userId, int score, TimeSpan timeSpent)
+        public async Task SaveUserScore(Guid userId, int score, long timeSpentInTicks)
         {
             m_DbContext.Leaderboards.Add(
                 new Leaderboard
                 {
                     UserId = userId,
                     Score = score,
-                    Time = timeSpent.Ticks
+                    Time = timeSpentInTicks
                 });
             await m_DbContext.SaveChangesAsync();
         }

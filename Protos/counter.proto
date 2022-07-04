@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "HackathonX.Service";
+
+package xgamer;
+
+service Counter {
+  rpc SetTimer(UserRequest) returns (stream Timer);
+}
+
+message UserRequest {
+    string name = 1;
+}
+
+message Timer {
+  int32 count = 1;
+}

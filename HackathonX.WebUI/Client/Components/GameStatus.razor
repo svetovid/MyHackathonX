@@ -1,0 +1,15 @@
+﻿@using HackathonX.Service
+
+<div class="game-status">
+  <div class="timer">@_timer</div>
+  <div class="user-name">@CurrentUser?.Name</div>
+  <div class="score">@Score</div>
+</div>
+
+@code {
+  [Parameter] public User? CurrentUser { get; set; }
+  [Parameter] public int Score { get; set; }
+  [Parameter] public int TimeCounter { get; set; }
+
+  private string _timer => TimeSpan.FromSeconds(TimeCounter).ToString(@"mm\:ss");
+}

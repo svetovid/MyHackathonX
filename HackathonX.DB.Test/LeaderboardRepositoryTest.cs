@@ -42,7 +42,7 @@ namespace HackathonX.DB.Test
 
             // Act
             using var leaderboardRepository = new LeaderboardRepository(_hackathonXContext);
-            await leaderboardRepository.SaveUserScore(user.Id, score, time);
+            await leaderboardRepository.SaveUserScore(user.Id, score, time.Ticks);
 
             // Assert
             var leaderboard = await GetLeaderboardFromDbHelper(_hackathonXContext, user.Id);
