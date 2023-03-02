@@ -5,7 +5,7 @@
 @using Microsoft.AspNetCore.WebUtilities
 @using System.Timers
 @using Microsoft.EntityFrameworkCore
-@*@inject XService TheService*@
+@inject XService TheService
 @inject NavigationManager navManager
 @inject IDbContextFactory<HackathonXContext> DbFactory
 
@@ -133,8 +133,8 @@ else
 }
 
 @code {
-  private HackathonX.Web.Data.User _user;
-  private IEnumerable<HackathonX.Web.Data.Question> _questionnaire;
+  private static HackathonX.Web.Data.User _user;
+  private static IEnumerable<HackathonX.Web.Data.Question> _questionnaire;
   bool _dataIsLoaded = false;
 
   private DateTime _startTime = DateTime.Now;
@@ -146,9 +146,9 @@ else
 
   private System.Timers.Timer? _timer;
 
-  protected override async Task OnInitializedAsync()
+  protected override void OnInitialized()
   {
-    if (!_dataIsLoaded)
+    if (_questionnaire == null || _user == null)
     {
       var uri = navManager.ToAbsoluteUri(navManager.Uri);
       if (!QueryHelpers.ParseQuery(uri.Query).TryGetValue("user", out var userName))
@@ -156,13 +156,13 @@ else
         navManager.NavigateTo("/");
       }
 
-      var context = DbFactory.CreateDbContext();
-      using var userRepo = new UserRepository(context);
-      using var questionnaireRepo = new QuestionnaireRepository(context);
-      var userFromDb = await userRepo.GetOrAddUser(userName);
+      //var context = DbFactory.CreateDbContext();
+      //using var userRepo = new UserRepository(context);
+      //using var questionnaireRepo = new QuestionnaireRepository(context);
+      var userFromDb = TheService.GetOrCreateUser(userName);
       _user = new HackathonX.Web.Data.User { Id = userFromDb.Id, Name = userFromDb.Name};
 
-      var questionnaireFromDb = await questionnaireRepo.GetQuestionnaire();
+      var questionnaireFromDb = TheService.GetQuestionnaire();
       _questionnaire = questionnaireFromDb.Select(x => new HackathonX.Web.Data.Question
             {
                 Id = x.Id,
@@ -172,12 +172,17 @@ else
             });
       _dataIsLoaded = true;
 
-            //_timer = new System.Timers.Timer(2000);
+      //_timer = new System.Timers.Timer(2000);
       //_timer.Elapsed += OnTimedEvent;
       //_timer.Enabled = true;
     }
 
-    await base.OnInitializedAsync();
+    base.OnInitialized();
+  }
+
+  protected override bool ShouldRender()
+  {
+    return !_dataIsLoaded;
   }
 
   private static void OnTimedEvent(Object source, ElapsedEventArgs e)
@@ -205,7 +210,7 @@ else
     //  navManager.NavigateTo("/results");
     //}
 
-    //StateHasChanged();
+    StateHasChanged();
   }
 
   private void SelectPuzzle(int? questionId)
@@ -215,7 +220,7 @@ else
     {
       _currentQuestion = question;
 
-      //StateHasChanged();
+      StateHasChanged();
     }
   }
 }

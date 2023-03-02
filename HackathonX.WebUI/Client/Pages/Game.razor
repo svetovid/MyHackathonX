@@ -27,20 +27,28 @@
 
   .battlefield {
     display: flex;
+    margin: 1rem;
   }
 
   .questionnaire {
-    width: 400px;
+    width: 25rem;
   }
   .puzzle {
-    width: 600px;
-    height: 405px;
+    width: 38.5rem;
+    height: 25rem;
     display: flex;
     flex-wrap: wrap;
   }
 
   .form-group {
     margin: 1rem;
+  }
+
+  .finish {
+      text-align: center;
+  }
+  .finish-btn {
+      width: 50%;
   }
 </style>
 
@@ -53,10 +61,17 @@ else
   <GameStatus CurrentUser="_user" Score="_score" TimeCounter="_timeCounter"/>
   <div class="battlefield">
     <div class="questionnaire">
-      <QuestionnaireForm CurrentQuestion="_currentQuestion" AbsencePlanSubmitted="AnswerTheQuestion" />
+        <QuestionnaireForm CurrentQuestion="_currentQuestion" AbsencePlanSubmitted="AnswerTheQuestion" />
     </div>
     <div class="puzzle">
-      <Puzzle CurrentQuestion="_currentQuestion" Questionnaire="_questionnaire" QuestionSelected="SelectPuzzle" />
+        <Puzzle CurrentQuestion="_currentQuestion" Questionnaire="_questionnaire" QuestionSelected="SelectPuzzle" BonusWord="@_bonusWord" />
     </div>
   </div>
+  @if (QuestFinished)
+  {
+    <BonusQuestion BonusAnswered="BonusQuestionAnswered" />
+    <div class="finish">
+      <button class="btn btn-primary finish-btn" onclick="@Finish">Finish and see results</button>
+    </div>
+  }
 }

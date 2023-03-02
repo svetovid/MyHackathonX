@@ -34,8 +34,6 @@ message Question {
   int32 score = 3;
   int64 useranswerid = 4;
   repeated Answer answers = 5;
-  bool answered = 6;
-  bool iscorrect = 7;
 }
 
 message Answer {

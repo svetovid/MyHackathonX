@@ -6,6 +6,8 @@ namespace HackathonX.Web.Data
 {
     public class XService : IDisposable
     {
+        private readonly object _lock = new object();
+
         private readonly IDbContextFactory<HackathonXContext> _dbFactory;
         //private UserRepository _userRepository;
         //private QuestionnaireRepository _questionnaireRepository;
@@ -62,7 +64,23 @@ namespace HackathonX.Web.Data
             _dbFactory = dbFactory;
         }
 
-        public async Task<User> GetOrCreateUser(string name)
+        public User GetOrCreateUser(string name)
+        {
+            if (_user == null)
+            {
+                lock (_lock)
+                {
+                    var context = _dbFactory.CreateDbContext();
+                    using var repo = new UserRepository(context);
+                    var user = repo.GetOrAddUser(name).GetAwaiter().GetResult();
+                    _user = new User { Id = user.Id, Name = user.Name };
+                }
+            }
+
+            return _user;
+        }
+
+        public async Task<User> GetOrCreateUserAsync(string name)
         {
             if (_user == null)
             {
@@ -75,7 +93,30 @@ namespace HackathonX.Web.Data
             return _user;
         }
 
-        public async Task<IEnumerable<Question>> GetQuestionnaire()
+        public IEnumerable<Question> GetQuestionnaire()
+        {
+            if (_questionnaire == null)
+            {
+                lock(_lock)
+                {
+                    var context = _dbFactory.CreateDbContext();
+                    using var repo = new QuestionnaireRepository(context);
+                    var questions = repo.GetQuestionnaire().GetAwaiter().GetResult();
+
+                    _questionnaire = questions.Select(x => new Question
+                    {
+                        Id = x.Id,
+                        Text = x.Text,
+                        Score = x.Score,
+                        Answers = x.Answers.Select(y => new Answer { Id = y.Id, Text = y.Text, IsCorrect = y.IsCorrect, QuestionId = y.QuestionId })
+                    });
+                }
+            }
+
+            return _questionnaire;
+        }
+
+        public async Task<IEnumerable<Question>> GetQuestionnaireAsync()
         {
             if (_questionnaire == null)
             {
@@ -109,7 +150,7 @@ namespace HackathonX.Web.Data
         {
             var context = _dbFactory.CreateDbContext();
             using var repo = new LeaderboardRepository(context);
-            await repo.SaveUserScore(userId, score, timeSpent);
+            await repo.SaveUserScore(userId, score, timeSpent.Ticks);
         }
 
         public async Task<IEnumerable<Leaderboard>> GetLeaderboards()

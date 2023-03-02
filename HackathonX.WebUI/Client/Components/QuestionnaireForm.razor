@@ -1,12 +1,23 @@
 ﻿@using HackathonX.Service
 
+<style>
+  .empty-questionnaire {
+      margin: 12rem 2rem;
+      text-align: center;
+  }
+
+  .btn-next-question {
+      width: 22.4rem;
+      margin: 0 1rem;
+  }
+</style>
+
 @if (CurrentQuestion == null)
 {
-  <span>Click on a puzzle cell</span>
+  <div class="empty-questionnaire">Click on a puzzle cell</div>
 }
 else
 {
-  <span>@CurrentQuestion.Id</span>
   <EditForm Model="@CurrentQuestion" OnValidSubmit="@AnswerTheQuestion">
     <div class="form-group">
       <label>@CurrentQuestion.Text</label>
@@ -21,7 +32,7 @@ else
       </InputRadioGroup>
       </div>
     </div>
-    <button type="submit">Next</button>
+    <button class="btn btn-primary btn-next-question" type="submit">Next</button>
   </EditForm>
 }
 

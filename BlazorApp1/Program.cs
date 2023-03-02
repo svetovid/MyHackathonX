@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
-//builder.Services.AddSingleton<XService>();
+builder.Services.AddSingleton<XService>();
 builder.Services.AddDbContextFactory<HackathonXContext>(options =>
                 options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
 
