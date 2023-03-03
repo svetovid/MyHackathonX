@@ -1,0 +1,22 @@
+﻿<div class="bonus-question">
+  <label class="form-label bonus-label">Get extra 50 points, answer the bonus question</label>
+  @if (IsCorrect.HasValue)
+  {
+    string passFail = IsCorrect.Value ? "Correct" : "Incorrect";
+    <span class="bonus-input @passFail.ToLowerInvariant()">@passFail</span>
+  }
+  else
+  {
+    <input type="text" class="form-control bonus-input" onchange="@AnswerTheQuestion" />
+  }
+</div>
+
+@code {
+  [Parameter] public EventCallback<string?> BonusAnswered { get; set; }
+  [Parameter] public bool? IsCorrect { get; set; }
+
+  private async Task AnswerTheQuestion(ChangeEventArgs e)
+  {
+    await BonusAnswered.InvokeAsync(e?.Value?.ToString());
+  }
+}

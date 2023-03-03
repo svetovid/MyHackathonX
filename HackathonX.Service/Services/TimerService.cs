@@ -2,11 +2,11 @@
 {
     public class TimerService : IHostedService
     {
-        private readonly TimeCounter m_TagService;
+        private readonly TimeCounter m_TimeCounter;
 
         public TimerService(TimeCounter tagService)
         {
-            m_TagService = tagService;
+            m_TimeCounter = tagService;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -16,7 +16,7 @@
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            m_TagService.Cleanup();
+            m_TimeCounter.Cleanup();
             return Task.CompletedTask;
         }
     }

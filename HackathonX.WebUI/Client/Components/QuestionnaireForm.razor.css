@@ -1,0 +1,17 @@
+﻿.empty-questionnaire {
+  margin: 12rem 2rem;
+  text-align: center;
+}
+
+.btn-next-question {
+  width: 22.4rem;
+  margin: 0 1rem;
+}
+
+.label__inline {
+  display: inline;
+}
+
+.form-group {
+  margin: 1rem;
+}

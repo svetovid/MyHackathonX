@@ -14,7 +14,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddSingleton(services =>
 {
     // Get the service address from appsettings.json
-    //var config = services.GetRequiredService<IConfiguration>();
     var backendUrl = builder.Configuration["api"];//"https://localhost:7253";//"http://localhost:5253";//config["BackendUrl"];
 
     // If no address is set then fallback to the current webpage URL
