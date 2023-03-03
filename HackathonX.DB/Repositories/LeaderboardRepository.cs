@@ -35,7 +35,8 @@ namespace HackathonX.DB.Repositories
                 {
                     UserId = userId,
                     Score = score,
-                    Time = timeSpentInTicks
+                    Time = timeSpentInTicks,
+                    Timestamp = DateTime.Now
                 });
             await m_DbContext.SaveChangesAsync();
         }

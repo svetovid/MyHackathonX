@@ -19,7 +19,6 @@ namespace HackathonX.Service.Services
         {
             try
             {
-                //var context = _dbFactory.CreateDbContext();
                 using var repo = new UserRepository(_dbContext);
                 var user = await repo.GetOrAddUser(request.Name);
                 return new User { Id = user.Id.ToString(), Name = user.Name };
@@ -35,7 +34,6 @@ namespace HackathonX.Service.Services
         {
             try
             {
-                //var context = _dbFactory.CreateDbContext();
                 using var repo = new QuestionnaireRepository(_dbContext);
                 var questions = await repo.GetQuestionnaire();
 
@@ -72,7 +70,6 @@ namespace HackathonX.Service.Services
         {
             try
             {
-                //var context = _dbFactory.CreateDbContext();
                 using var repo = new LeaderboardRepository(_dbContext);
                 await repo.SaveUserScore(Guid.Parse(request.User.Id), request.Score, request.Time);
                 return new SaveResult { Success = true };
@@ -88,7 +85,6 @@ namespace HackathonX.Service.Services
         {
             try
             {
-                //var context = _dbFactory.CreateDbContext();
                 using var repo = new LeaderboardRepository(_dbContext);
                 var leaderboards = await repo.GetLeaderboard();
 
@@ -102,7 +98,7 @@ namespace HackathonX.Service.Services
                         {
                             Rank = 1,
                             Score = item.Score,
-                            User = new HackathonX.Service.User { Id = item.User.Id.ToString(), Name = item.User.Name },
+                            User = new User { Id = item.User.Id.ToString(), Name = item.User.Name },
                             Time = item.Time
                         });
                 }

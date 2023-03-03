@@ -1,17 +1,5 @@
 ﻿@using HackathonX.Service
 
-<style>
-  .empty-questionnaire {
-      margin: 12rem 2rem;
-      text-align: center;
-  }
-
-  .btn-next-question {
-      width: 22.4rem;
-      margin: 0 1rem;
-  }
-</style>
-
 @if (CurrentQuestion == null)
 {
   <div class="empty-questionnaire">Click on a puzzle cell</div>
@@ -22,17 +10,21 @@ else
     <div class="form-group">
       <label>@CurrentQuestion.Text</label>
       <div class="form-control">
-      <InputRadioGroup id="userAnswerId" @bind-Value="CurrentQuestion.Useranswerid">
-      @foreach(var ans in CurrentQuestion.Answers)
-      {
-        <div>
-          <InputRadio Value="@ans.Id"/> @ans.Text
-        </div>
-      }
-      </InputRadioGroup>
+        <InputRadioGroup Name="questionOptions" id="userAnswerId" @bind-Value="CurrentQuestion.Useranswerid">
+        @foreach(var ans in CurrentQuestion.Answers)
+        {
+            var _id = $"radio_{ans.Id}";
+            <div>
+              <InputRadio class="form-check-input" Value="@ans.Id" Name="questionOptions" id="@_id" />
+              <label class="form-check-label label__inline" for="@_id">
+                @ans.Text
+              </label>
+          </div>
+        }
+        </InputRadioGroup>
       </div>
     </div>
-    <button class="btn btn-primary btn-next-question" type="submit">Next</button>
+    <button class="btn btn-primary btn-next-question" type="submit" disabled="@(CurrentQuestion?.Answered)">Next</button>
   </EditForm>
 }
 

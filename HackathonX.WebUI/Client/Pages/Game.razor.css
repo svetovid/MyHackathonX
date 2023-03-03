@@ -1,0 +1,23 @@
+﻿.battlefield {
+  display: flex;
+  margin: 1rem;
+}
+
+.questionnaire {
+  width: 25rem;
+}
+
+.puzzle {
+  width: 38.5rem;
+  height: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.finish {
+  text-align: center;
+}
+
+.finish-btn {
+  width: 50%;
+}

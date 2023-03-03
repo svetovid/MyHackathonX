@@ -14,7 +14,7 @@ namespace HackathonX.DB.Test
 
         public LeaderboardRepositoryTest()
         {
-            _connection = new SqliteConnection("Data Source=HackathonX.db;");//new SqliteConnection("Filename=:memory:");
+            _connection = new SqliteConnection("Data Source=HackathonX.db;");//new SqliteConnection("Data Source=:memory:");
             _connection.Open();
 
             _contextOptions = new DbContextOptionsBuilder<HackathonXContext>()

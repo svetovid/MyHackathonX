@@ -7,13 +7,16 @@
 
         internal void SetUserCounter(string userName)
         {
-            if (_counters.ContainsKey(userName))
+            lock (_lock)
             {
-                throw new Exception($"User {userName} is already playing!");
-            }
+                if (_counters.ContainsKey(userName))
+                {
+                    throw new Exception($"User {userName} is already playing!");
+                }
 
-            var counter = new GameTimer();
-            _counters.Add(userName, counter);
+                var counter = new GameTimer();
+                _counters.Add(userName, counter);
+            }
         }
 
         internal int GetCounter(string userName)
@@ -28,7 +31,10 @@
 
         internal void RemoveCounter(string userName)
         {
-            _counters.Remove(userName);
+            lock (_lock)
+            {
+                _counters.Remove(userName);
+            }
         }
 
         internal void Cleanup()

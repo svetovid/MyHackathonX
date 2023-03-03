@@ -1,0 +1,41 @@
+﻿.puzzle-unit {
+  width: 12.5rem;
+  height: 8.5rem;
+  background-color: #5ea1c4;
+  border: 0.01rem solid #653;
+  box-shadow: 0.2rem 0.2rem 0.6rem 0.06rem #286382 inset;
+  cursor: pointer;
+  position: relative;
+  font-size: 5rem;
+  text-align: center;
+}
+
+  .puzzle-unit:hover {
+    box-shadow: 0.2rem 0.2rem 0.6rem 0.06rem #d1c732 inset;
+    border: 0.01rem solid #d1c732;
+  }
+
+  .puzzle-unit.selected {
+    background-color: #264d61;
+    color: #dfdfdf;
+  }
+
+.flip {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-back {
+  background-color: #264d61;
+  color: #dfdfdf;
+  transform: rotateY(180deg);
+}

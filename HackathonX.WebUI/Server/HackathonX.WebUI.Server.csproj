@@ -14,7 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\HackathonX.DB\HackathonX.DB.csproj" />
     <ProjectReference Include="..\Client\HackathonX.WebUI.Client.csproj" />
-    <ProjectReference Include="..\Shared\HackathonX.WebUI.Shared.csproj" />
   </ItemGroup>
 
 

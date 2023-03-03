@@ -1,23 +1,19 @@
-﻿<style>
-  .bonus-label {
-    flex-grow: 1;
-    text-align: left;
-    margin: auto 0.5rem;
-  }
-
-  .bonus-input {
-    flex-grow: 1;
-    width: inherit;
-  }
-</style> 
-
-<div class="game-status">
+﻿<div class="bonus-question">
   <label class="form-label bonus-label">Get extra 50 points, answer the bonus question</label>
-  <input type="text" class="form-control bonus-input" onchange="@AnswerTheQuestion" />
+  @if (IsCorrect.HasValue)
+  {
+    string passFail = IsCorrect.Value ? "Correct" : "Incorrect";
+    <span class="bonus-input @passFail.ToLowerInvariant()">@passFail</span>
+  }
+  else
+  {
+    <input type="text" class="form-control bonus-input" onchange="@AnswerTheQuestion" />
+  }
 </div>
 
 @code {
   [Parameter] public EventCallback<string?> BonusAnswered { get; set; }
+  [Parameter] public bool? IsCorrect { get; set; }
 
   private async Task AnswerTheQuestion(ChangeEventArgs e)
   {
